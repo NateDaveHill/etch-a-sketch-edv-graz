@@ -31,8 +31,12 @@ function resetGrid() {
         cell.style.backgroundColor = 'rgb(255,255,255)';
     }); 
 
-    var userGridInput = parseInt(prompt("Enter a Value between 1 and 90", "1"));
-    createGrid(userGridInput);
+    var userGridInput = parseInt(prompt("Enter a Value between 1 and 100", "1"));
+
+    while (userGridInput > 100 || userGridInput < 1) {
+      var userGridInput = parseInt(prompt("Number is invalid. Please enter a Value between 1 and 100", "1"));
+    } 
+  createGrid(userGridInput);
 }
 
 createGrid(10);
